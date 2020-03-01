@@ -5,10 +5,12 @@ class File : public Entry
 {
 public:
     File(const std::string &name, int size) : m_name(name), m_size(size) {}
+
     virtual std::string getName() const override
     {
         return m_name;
     }
+
     virtual int getSize() const override
     {
         return m_size;

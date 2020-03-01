@@ -8,5 +8,7 @@ int main(int argc, char **argv)
     painter->printStrong();
     painter->printWeak();
     delete painter;
+
+    system("pause");
     return 0;
 }

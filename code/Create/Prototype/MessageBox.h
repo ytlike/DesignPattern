@@ -4,7 +4,7 @@
 class MessageBox : public IProduct
 {
 public:
-    MessageBox(const std::string &str) : m_name(str) {}
+    MessageBox(const std::string &str) : m_name(str){}; 
     IProduct *Clone() override
     {
         return new MessageBox(m_name);

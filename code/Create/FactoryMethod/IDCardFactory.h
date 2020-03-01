@@ -5,7 +5,7 @@
 #include <vector>
 class IDCareFactory : public IFactory
 {
-public:
+private:
     IProduct *createProduct(const std::string &owner)
     {
         return new IDCard(owner);

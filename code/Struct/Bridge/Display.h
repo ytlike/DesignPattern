@@ -5,6 +5,15 @@ class Display
 public:
     virtual ~Display() {}
     Display(IDisplayImpl *impl) : m_pImpl(impl) {}
+    
+    void display()
+    {
+        open();
+        print();
+        close();
+    }
+
+protected:
     virtual void open()
     {
         m_pImpl->rawOpen();
@@ -16,12 +25,6 @@ public:
     virtual void close()
     {
         m_pImpl->rawClose();
-    }
-    void display()
-    {
-        open();
-        print();
-        close();
     }
 
 private:

@@ -9,5 +9,7 @@ int main()
     std::string result = builder->getResult();
     std::cout << result << std::endl;
     delete builder;
+
+    system("pause");
     return 0;
 }

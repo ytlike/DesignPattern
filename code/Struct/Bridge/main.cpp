@@ -17,5 +17,7 @@ int main(int argc, char **argv)
     d2->display();
     d3->display();
     d3->mulitDisplay(4);
+    
+    system("pause");
     return 0;
 }

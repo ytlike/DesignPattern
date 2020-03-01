@@ -15,11 +15,28 @@ public:
         }
         m_dirs.clear();
     }
+
+    void addEntry(Entry *entry)
+    {
+        m_dirs.push_back(entry);
+    }
+
+    void removeEntry()
+    {
+        m_dirs.pop_back();
+    }
+
+    Entry *getEntry(int index)
+    {
+        return m_dirs.at(index);
+    }
+
     virtual std::string getName() const override
     {
         return m_name;
     }
-    virtual int getSize() const
+
+    virtual int getSize() const override
     {
         int size = 0;
         for (auto it : m_dirs)
@@ -28,10 +45,7 @@ public:
         }
         return size;
     }
-    virtual void addEntryy(Entry *entry) override
-    {
-        m_dirs.push_back(entry);
-    }
+
     virtual void printList(const std::string &str) override
     {
         std::cout << str << "/" << toString() << std::endl;
