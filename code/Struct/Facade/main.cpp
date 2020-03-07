@@ -4,4 +4,7 @@ int main(int argc, char **argv)
 {
     assert(DataBase::GetInstance().getNameByEmail("").empty());
     PageMaker::GetInstance().makeWelcomePage("zhangsan@zhangsan.com");
+
+    system("pause");
+    return 0;
 }

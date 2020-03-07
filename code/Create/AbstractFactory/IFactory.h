@@ -1,10 +1,11 @@
 #pragma once
-#include "IItem.h"
-#include "ILink.h"
-#include "IPage.h"
-#include "ITray.h"
 #include <functional>
 #include <unordered_map>
+
+class ILink;
+class ITray;
+class IPage;
+
 class IFactory
 {
 public:
@@ -13,6 +14,7 @@ public:
     virtual ITray *createTray(const std::string &caption) = 0;
     virtual IPage *createPage(const std::string &title, const std::string &author) = 0;
 };
+
 class IFactoryHelper
 {
 public:

@@ -1,9 +1,9 @@
-﻿#include "IFactory.h"
-#include "ListFactory.h"
+﻿#include "ListFactory.h"
 #include <cassert>
 #include <iostream>
 #include <memory>
 #include <string>
+
 int main()
 {
     std::shared_ptr<IFactory> factory(IFactoryHelper::getFactory("ListFactory"));

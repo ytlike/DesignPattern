@@ -4,11 +4,14 @@
 class HtmlWriter
 {
 public:
-    void title(const std::string &title)
+    void begin() 
     {
         m_ss << "<html>"
-             << "<head>"
-             << "<title>" + title + "</title>"
+             << "<head>";
+    }
+    void title(const std::string &title)
+    {
+        m_ss << "<title>" + title + "</title>"
              << "</head>"
              << "<body>\n"
              << "<h1>" + title + "</h1>\n";

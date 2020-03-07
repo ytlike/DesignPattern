@@ -6,10 +6,6 @@ class PageMaker
 {
 public:
     ~PageMaker() = default;
-    PageMaker(const PageMaker &) = delete;
-    PageMaker(PageMaker &&) = delete;
-    PageMaker &operator=(const PageMaker &) = delete;
-    PageMaker &operator=(PageMaker &&) = delete;
     static PageMaker &GetInstance()
     {
         static PageMaker pm;
@@ -19,6 +15,7 @@ public:
     {
         auto name = DataBase::GetInstance().getNameByEmail(mailAddr);
         HtmlWriter writer;
+        writer.begin();
         writer.title("Welcome to " + name + "'s page!");
         writer.paragraph(name + u8"欢迎来到" + name + u8"的主页.");
         writer.paragraph(u8"等着你的邮件哦！");
@@ -27,8 +24,10 @@ public:
         std::cout << writer.toString() << std::endl;
     }
 
-protected:
-    PageMaker() {}
-
 private:
+    PageMaker() {}
+    PageMaker(const PageMaker &) = delete;
+    PageMaker(PageMaker &&) = delete;
+    PageMaker &operator=(const PageMaker &) = delete;
+    PageMaker &operator=(PageMaker &&) = delete;
 };

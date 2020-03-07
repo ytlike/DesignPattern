@@ -23,13 +23,11 @@ public:
         }
     }
 
-protected:
+private:
     DataBase(const DataBase &) = delete;
     DataBase(DataBase &&) = delete;
     DataBase &operator=(const DataBase &) = delete;
     DataBase &operator=(DataBase &&) = delete;
-
-private:
     DataBase() {}
 
 private:

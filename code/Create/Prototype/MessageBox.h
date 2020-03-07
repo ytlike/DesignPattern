@@ -4,10 +4,18 @@
 class MessageBox : public IProduct
 {
 public:
-    MessageBox(const std::string &str) : m_name(str){}; 
+    MessageBox(const std::string &str) : m_name(str) {}
+    MessageBox(const MessageBox &obj)
+    {
+        //std::cout << m_name << std::endl;
+        //std::cout << obj.m_name << std::endl;
+        this->m_name = obj.m_name;
+    }
     IProduct *Clone() override
     {
-        return new MessageBox(m_name);
+        //默认拷贝函数是浅拷贝
+        //需要重写拷贝函数
+        return new MessageBox(*this);
     }
     void Use(const std::string &str)
     {

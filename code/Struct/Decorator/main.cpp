@@ -15,6 +15,10 @@ int main()
     d4->show();
 
     delete d1;
+    //delete d2;
+    //delete d3;
     delete d4;
+
+    system("pause");
     return 0;
 }

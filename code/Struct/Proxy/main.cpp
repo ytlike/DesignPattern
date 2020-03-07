@@ -1,4 +1,5 @@
 #include "PrinterProxy.h"
+
 int main()
 {
     Printable *p = new PrinterProxy("123");
@@ -9,5 +10,7 @@ int main()
     p->setPrinterName("789");
     p->print();
     delete p;
+
+    system("pause");
     return 0;
 }
