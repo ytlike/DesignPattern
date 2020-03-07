@@ -3,12 +3,13 @@ set(dirList "")
 foreach(arg ${newList})
     get_filename_component(dirPath ${arg} PATH)
     get_filename_component(folderName ${dirPath} NAME)
-    set(dirList ${dirList} ${folderName})
+    if(${dirPath} MATCHES ".vshistory")
+        continue()
+    else()
+        set(dirList ${dirList} ${folderName})
+    endif()
 endforeach()
 LIST(REMOVE_DUPLICATES dirList)
 foreach(subDir ${dirList})
     add_subdirectory(${subDir})
 endforeach()
-
-
-
