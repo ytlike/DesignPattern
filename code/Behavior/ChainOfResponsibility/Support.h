@@ -4,7 +4,10 @@
 class Support
 {
 public:
-    virtual ~Support() {}
+    virtual ~Support() 
+    {
+        std::cout << this << std::endl;
+    }
     Support(const std::string &name) : m_name(name) {}
     Support *setNext(Support *next)
     {
@@ -30,8 +33,9 @@ public:
     {
         return "[" + m_name + "]";
     }
-    virtual bool resolve(Trouble *trouble) = 0;
+
 protected:
+    virtual bool resolve(Trouble *trouble) = 0;
     void done(Trouble *trouble)
     {
         std::cout << trouble->toString() << " is solved by " << toString() << std::endl;
@@ -40,6 +44,7 @@ protected:
     {
         std::cout << trouble->toString() << " cannot be resolved." << std::endl;
     }
+
 private:
     std::string m_name;
     Support *m_next = nullptr;

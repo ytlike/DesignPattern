@@ -13,10 +13,17 @@ int main() {
         Trouble t(i);
         s1->support(&t);
     }
+
+    std::cout << s1 << std::endl;
+    std::cout << s2 << std::endl;
+    std::cout << s3 << std::endl;
+    std::cout << s4 << std::endl;
     delete s1;
     delete s2;
     delete s3;
     delete s4;
+
+    system("pause");
     return 0;
 
 }
